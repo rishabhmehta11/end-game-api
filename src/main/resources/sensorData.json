@@ -1,0 +1,121 @@
+[
+  {
+    "id": "metric_1_sensor_1",
+    "sensorId": "sensor_1",
+    "metricType": "temperature",
+    "timestamp": 1729760400000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_2_sensor_1",
+    "sensorId": "sensor_1",
+    "metricType": "humidity",
+    "timestamp": 1730463600000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_3_sensor_1",
+    "sensorId": "sensor_1",
+    "metricType": "temperature",
+    "timestamp": 1729933200000,
+    "value": 30.0
+  },
+  {
+    "id": "metric_4_sensor_1",
+    "sensorId": "sensor_1",
+    "metricType": "humidity",
+    "timestamp": 1730547600000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_5_sensor_1",
+    "sensorId": "sensor_1",
+    "metricType": "temperature",
+    "timestamp": 1730455200000,
+    "value": 25.4
+  },
+  {
+    "id": "metric_6_sensor_1",
+    "sensorId": "sensor_1",
+    "metricType": "temperature",
+    "timestamp": 1730541600000,
+    "value": 21.0
+  },
+  {
+    "id": "metric_7_sensor_1",
+    "sensorId": "sensor_2",
+    "metricType": "humidity",
+    "timestamp": 1730628000000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_8_sensor_1",
+    "sensorId": "sensor_2",
+    "metricType": "humidity",
+    "timestamp": 1730714400000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_1_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "humidity",
+    "timestamp": 1729764000000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_2_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "humidity",
+    "timestamp": 1730718000000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_3_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "humidity",
+    "timestamp": 1730026800000,
+    "value": 28.3
+  },
+  {
+    "id": "metric_4_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "temperature",
+    "timestamp": 1729850400000,
+    "value": 17.4
+  },
+  {
+    "id": "metric_5_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "temperature",
+    "timestamp": 1730026800000,
+    "value": 12.2
+  },
+  {
+    "id": "metric_6_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "temperature",
+    "timestamp": 1730286000000,
+    "value": 10.0
+  },
+  {
+    "id": "metric_6_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "temperature",
+    "timestamp": 1730458800000,
+    "value": 10.0
+  },
+  {
+    "id": "metric_6_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "temperature",
+    "timestamp": 1730631600000,
+    "value": 10.0
+  },
+  {
+    "id": "metric_6_sensor_2",
+    "sensorId": "sensor_2",
+    "metricType": "temperature",
+    "timestamp": 1730718000000,
+    "value": 10.0
+  }
+]
