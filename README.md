@@ -1,4 +1,4 @@
-# Weather Sensor API
+# End Game Sensor API
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@
 
 ## Name
 
-Weather API
+Sensor API
 
 ## Description
 
@@ -23,7 +23,7 @@ You can query specific metrics over a date range (between one day and a month) a
 
 ## Running Locally
 
-You will need to set an local postgres database to store and retrive the data. Once postgres is set up you can use /metrics/preload controller to prepoulate some data for test/demo purpose.
+You will need to set an local postgres database to store and retrive the data. Once postgres is set up you can use /metrics/preload controller to prepoulate some data for test/demo purpose. The test json file contains data ranging from 24-10-2024 till 08-11-2024 to help compute statistics
 
 ```bash
 mvn spring-boot:run

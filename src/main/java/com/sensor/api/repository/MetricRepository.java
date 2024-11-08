@@ -10,8 +10,8 @@ import com.sensor.api.model.metrics.Metric;
 
 @Repository
 public interface MetricRepository extends JpaRepository<Metric, Long> {
-	List<Metric> findBySensorIdInAndMetricTypeInAndTimestampBetween(
+	List<Metric> findBySensorIdInAndMetricTypeInAndDateUTCMillisBetween(
 			List<String> sensorIds, List<String> metricTypes, long startTimeStamp, long endTimeStamp);
 
-	Optional<Metric> findTopBySensorIdAndMetricTypeOrderByTimestampDesc(String sensorIds, String metricTypes);
+	Optional<Metric> findTopBySensorIdAndMetricTypeOrderByDateUTCMillisDesc(String sensorIds, String metricTypes);
 }

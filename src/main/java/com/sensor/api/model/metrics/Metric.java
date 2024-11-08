@@ -1,5 +1,8 @@
 package com.sensor.api.model.metrics;
 
+import java.util.Date;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -21,6 +24,9 @@ public class Metric {
 	private String sensorId;
 	private String metricType;
 	private Double value;
-	private Long timestamp;
+	@Column(name = "date_utc_millis")
+	private Long dateUTCMillis;
+	@Column(name = "date_utc")
+	private Date dateUTC;
 
 }

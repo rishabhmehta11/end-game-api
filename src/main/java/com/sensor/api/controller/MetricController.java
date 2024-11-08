@@ -53,13 +53,14 @@ public class MetricController {
 
 	// Endpoint for receiving new data
 	@PostMapping("/data/new")
-	public ResponseEntity<Metric> addMetric(@RequestBody Metric metricRequest) {
+	public ResponseEntity<Metric> saveMetric(@RequestBody Metric metricRequest) {
 		return ResponseEntity.ok(metricService.saveMetricRecord(Metric.builder()
 				.id(metricRequest.getId())
 				.sensorId(metricRequest.getSensorId())
 				.metricType(metricRequest.getMetricType())
 				.value(metricRequest.getValue())
-				.timestamp(metricRequest.getTimestamp())
+				.dateUTC(metricRequest.getDateUTC())
+				.dateUTCMillis(metricRequest.getDateUTC().toInstant().toEpochMilli())
 				.build()));
 	}
 
@@ -67,22 +68,26 @@ public class MetricController {
 	// requried input
 	// numberOfDays range from one day to one month and it's an optional input field
 	@GetMapping("/data/get")
-	public ResponseEntity<List<ApiMetric>> queryMetrics(
+	public ResponseEntity<List<ApiMetric>> fetchMetrics(
 			@RequestParam(value = "sensorIds", required = true) List<String> sensorIds,
 			@RequestParam(value = "metricTypes", required = true) List<String> metricTypes,
 			@RequestParam(value = "statistic", required = true) String statistic,
 			@RequestParam(value = "numberOfDays", required = false) Integer numberOfDays) {
 
 		if (numberOfDays != null && (numberOfDays > 31 || numberOfDays < 1)) {
-			log.error(
-					"Invalid Number of day: Data requested for %s day which exceeds limit. Number of Days can be between one day and a month",
+			String message = String.format(
+					"Invalid Number of day: Data requested for %s day which exceeds the limit. Number of Days can be between one day and a month",
 					numberOfDays);
+			log.error(message);
+
 			return ResponseEntity.badRequest().build();
 		}
 		if (!AVAILABLE_STATISTICS.contains(statistic)) {
-
-			log.error("Invalid Statistic variable: Statistic entered is not listed. List of available statistics: %s",
+			String message = String.format(
+					"Invalid Statistic variable: Statistic entered is not listed. List of available statistics: %s",
 					AVAILABLE_STATISTICS);
+			log.error(message);
+
 			return ResponseEntity.badRequest().build();
 		}
 		return ResponseEntity.ok(metricService.getMetricsData(sensorIds, metricTypes, statistic, numberOfDays));

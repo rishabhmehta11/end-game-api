@@ -37,7 +37,7 @@ public class MetricService {
 		if (numberOfDays == null) {
 			for (String sensorId : sensorIds) {
 				for (String metricType : metricTypes) {
-					metricRepository.findTopBySensorIdAndMetricTypeOrderByTimestampDesc(sensorId, metricType)
+					metricRepository.findTopBySensorIdAndMetricTypeOrderByDateUTCMillisDesc(sensorId, metricType)
 							.ifPresent(metrics::add);
 				}
 			}
@@ -45,7 +45,7 @@ public class MetricService {
 			Long startDateTimestamp = LocalDateTime.now().minusDays(numberOfDays).toInstant(ZoneOffset.UTC)
 					.toEpochMilli();
 			Long endDateTimeStamp = LocalDateTime.now().toInstant(ZoneOffset.UTC).toEpochMilli();
-			metrics = metricRepository.findBySensorIdInAndMetricTypeInAndTimestampBetween(sensorIds,
+			metrics = metricRepository.findBySensorIdInAndMetricTypeInAndDateUTCMillisBetween(sensorIds,
 					metricTypes, startDateTimestamp, endDateTimeStamp);
 
 		}
